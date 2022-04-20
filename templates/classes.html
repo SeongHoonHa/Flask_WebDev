@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Good Vibe Yoga Classes{% endblock %}
+{% block content %}
+<div class="container my-5">
+    <div class="row align-items-start">
+        <div class="col-md-6">
+            <div class="container">
+            </br>
+                <h2>Good Vibe Yoga Classes</h2>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <h2><th scope = "col">Date</th></h2>
+                            <h2><th scope = "col">Class Name</th></h2>
+                            <h2><th scope = "col">Duration</th></h2>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for yoga in yoga_classes %}
+                        <tr>
+                            
+                            <td>{{yoga_classes[yoga]['date']}}</td>
+                            <td><a href="{{url_for('class_detail', class_id=yoga_classes[yoga]['name'])}}">
+                                {{yoga_classes[yoga]['name']}}
+                                </a>
+                            </td>
+                            <td>{{yoga_classes[yoga]['duration']}}</td>
+                    
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                    
+                </table>
+                <a class="btn btn-primary" href="{{url_for('create')}}" role="button">Add a Class!</a>    
+            </div>
+        </div>
+    </div>
+</div>
+
+</table>
+{% endblock %}

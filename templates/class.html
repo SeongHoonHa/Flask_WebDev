@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Class Detail{% endblock %}
+
+{% block content %}
+
+<div class="container my-5">
+</br>
+</br>
+    <h1>{{yoga_class['name']}}</h1>
+    <div class="row align-items-start">
+        <div class="col-md-6">
+            <div class="container">
+</br>
+</br>
+            <p><strong>Date:</strong>                {{yoga_class['date']}}</p>
+            <p><strong>Duration:</strong>            {{yoga_class['duration']}}</p>
+            <p><strong>Yoga type:</strong>           {{yoga_class['type']}}</p>
+            <p><strong>Yoga Level:</strong>          {{yoga_class['level']}}</p>
+            <p><strong>Trainer:</strong>             {{yoga_class['trainer']}}</p>
+            <p><strong>Description:</strong>         {{yoga_class['description']}}</p>
+            <a class="btn btn-primary" href="{{url_for('edit',class_id=class_id)}}" role="button">Edit Class!</a>
+            <a class="btn btn-primary" style="background-color:red" href="{{url_for('delete',class_id=class_id)}}" role="button">Delete Class!</a>  
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+ {% endblock %}

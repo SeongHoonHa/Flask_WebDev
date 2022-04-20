@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+
+{% block title %}Add a Class{% endblock %}
+
+{% block content %}
+{% if new_yoga %}
+<h2>Edit Class</h2>
+<div class="container my-5">
+    <div class="row align-items-start">
+        <div class="col-md-6">
+            <div class="container">
+            </br>
+                <h2>Edit Class</h2>
+                <form method='POST' name='class_form'>
+                   
+                    <div>
+                        
+                        <label for="name">Name: </label>
+                        <input type="text" id="name" name="name" value = '{{new_yoga['name']}}'>
+                        
+                    </div>
+                    <div>
+                        <label for="type">Type: </label>
+                        <input type="text" id="type" name="type" value= '{{new_yoga['type']}}'>
+                        
+                    </div>
+                    <div>
+                        <label for="level">Level: </label>
+                        <select class="form-select mb-3" aria-label="level" id="level" name="level">
+                            <option value='{{new_yoga['level']}}' selected hidden>{{new_yoga['level']}}</option>
+                            <option value="Beginner">Beginner</option>
+                            <option value="Intermediate">Intermediate</option>
+                            <option value="Advanced">Advanced</option>
+                        </select>
+                        
+                    </div>
+                    <div>
+                        <label for="date">Date: </label>
+                        <input type="text" id="date" name="date" value='{{new_yoga['date']}}'>
+                        
+                    </div>
+                    <div>
+                        <label for="duration">Duration: </label>
+                        <input type="text" id="duration" name="duration" value='{{new_yoga['duration']}}'>
+                        
+                    </div>
+                    <div>
+                        <label for="trainer">Trainer: </label>
+                        <input type="text" id="trainer" name="trainer" value='{{new_yoga['trainer']}}'>
+                        
+                    </div>
+                    <div>
+                        <label for="description">Description: </label>
+                        <input type="text" id="description" name="description" value='{{new_yoga['description']}}'>
+                        
+                    </div>
+                    
+                    <button type="submit" value="Submit">Submit</button>
+                    <button type="reset" value="Reset">Reset</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% else %}
+
+<h2>Add a Class</h2>
+<div class="container my-5">
+    <div class="row align-items-start">
+        <div class="col-md-6">
+            <div class="container">
+            </br>
+                <h2>Add a Class</h2>
+                <form method='POST' name='class_form'>
+                   
+                    <div>
+                        
+                        <label for="name">Name: </label>
+                        <input type="text" id="name" name="name" >
+                        
+                    </div>
+                    <div>
+                        <label for="type">Type: </label>
+                        <input type="text" id="type" name="type" >
+                        
+                    </div>
+                    <div>
+                        <label for="level">Level: </label>
+                        <select class="form-select mb-3" aria-label="level" id="level" name="level">
+                            <option value="Beginner">Beginner</option>
+                            <option value="Intermediate">Intermediate</option>
+                            <option value="Advanced">Advanced</option>
+                        </select>
+                        
+                    </div>
+                    <div>
+                        <label for="date">Date: </label>
+                        <input type="text" id="date" name="date" >
+                        
+                    </div>
+                    <div>
+                        <label for="duration">Duration: </label>
+                        <input type="text" id="duration" name="duration">
+                        
+                    </div>
+                    <div>
+                        <label for="trainer">Trainer: </label>
+                        <input type="text" id="trainer" name="trainer">
+                        
+                    </div>
+                    <div>
+                        <label for="description">Description: </label>
+                        <input type="text" id="description" name="description">
+                        
+                    </div>
+                    
+                    <button type="submit" value="Submit">Submit</button>
+                    <button type="reset" value="Reset">Reset</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+ {% endblock %}

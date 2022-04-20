@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Good Vibes Yoga{% endblock %}
+
+{% block content %} 
+<div class="px-4 py-5 my-5 text-center">
+    <h2>Good Vibes Yoga</h2>
+</div>
+    <div class="px-4 py-5 my-5 text-center">
+        <p> Your chosen class has been deleted </p>
+        <div class="col-lg-6 mx-auto">
+            <a href="{{url_for('classes')}}" class="btn btn-primary btn-lg" tabindex="-1" role="button" aria-disabled="true">Class List</a>
+        </div>
+    </div>
+
+
+{% endblock %}
